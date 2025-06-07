@@ -1,0 +1,2 @@
+ # 1. How to get Guild ID?
+ > To get the guild id, Head to Settings => Advanced => Developer Mode, Enable it. Right-click on the guild you want the commands to be available only and click "Copy Guild ID"
