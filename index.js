@@ -29,7 +29,7 @@ for (const file of commandFiles) {
     client.commands.set(command.data.name, command);
     localCommands.push(command.data.toJSON());
   } else {
-    console.warn(`⚠️ [WARNING] Command at ${filePath} is missing required "data" or "execute" property.`);
+    console.warn(`⚠️  | [WARNING] Command at ${filePath} is missing required "data" or "execute" property.`);
   }
 }
 

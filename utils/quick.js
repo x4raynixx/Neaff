@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js")
+const config = require("../config")
 
 function cmd_disabled(interaction) {
     return interaction.reply({
@@ -26,8 +27,31 @@ async function check_perms(p, interaction) {
   return "OK";
 }
 
+function cstate(name, int) {
+    if (!config + "." + name) {
+        cmd_disabled(int)
+        return "OK"
+    } else {
+        return "NO"
+    }
+}
+
+function check_if_server(interaction) {
+  if (!interaction.guild) {
+    interaction.reply({
+      content: "Hey! This command can only be used in a server!",
+      flags: 64,
+    });
+    return true;
+  }
+  return false;
+}
+
+
 module.exports = {
     cmd_disabled,
     no_perms,
     check_perms,
+    cstate,
+    check_if_server,
 }
