@@ -10,7 +10,7 @@ module.exports = {
       await command.execute(interaction);
     } catch (error) {
       console.error(`❌ Error at /${interaction.commandName}:\n`, error);
-      await interaction.reply({ content: "Something went wrong, please contact the owner!", ephemeral: true });
+      await interaction.reply({ content: "Uh, something went wrong, please contact the owner!", ephemeral: true });
     }
   },
 };

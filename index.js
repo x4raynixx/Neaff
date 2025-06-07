@@ -41,38 +41,25 @@ client.once("ready", async () => {
   const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
   try {
-    let currentCommands;
     let route;
 
     if (config.LOAD_ONLY_ON_GUILD) {
       route = Routes.applicationGuildCommands(client.user.id, config.GUILD_ID);
-      currentCommands = await rest.get(route);
       console.log("📍 GUILD COMMANDS ONLY [ACTIVE]");
     } else {
       route = Routes.applicationCommands(client.user.id);
-      currentCommands = await rest.get(route);
       console.log("🌐 GLOBAL COMMANDS [ACTIVE]");
     }
 
-    const existingCommandNames = new Set(currentCommands.map(cmd => cmd.name));
-    const newCommands = localCommands.filter(cmd => !existingCommandNames.has(cmd.name));
+    const currentCommands = await rest.get(route);
 
-    if (newCommands.length > 0) {
-      await rest.put(route, { body: [...currentCommands, ...newCommands] });
-      console.log(`🤖 Detected and registered ${newCommands.length} new commands`);
-    } else {
-      console.log("👌 No new commands to register.");
-    }
+    await Promise.all(currentCommands.map(cmd => rest.delete(`${route}/${cmd.id}`)));
+
+    await rest.put(route, { body: localCommands });
+
+    console.log(`✅ Removed old commands and registered ${localCommands.length} new slash commands.`);
   } catch (err) {
     console.error("❌ Failed to register commands:\n", err);
-
-    if (err.code === 50001) {
-      console.error(`❗Bot probably has no access to the server (GUILD_ID = ${config.GUILD_ID})`);
-      console.error("🛠️  Make sure:");
-      console.error("- The bot is invited to that server");
-      console.error("- The bot has 'applications.commands' scope");
-      console.error("- The GUILD_ID is correct");
-    }
   }
 });
 
