@@ -19,18 +19,18 @@ module.exports = {
           return q.cmd_disabled(interaction);
         }
 
-    await q.check_perms()
+    await q.check_perms("admin", interaction)
 
     const amount = parseInt(interaction.options.getString("amount"));
 
     if (amount > 100) {
       return interaction.reply({
-        content: "Wooaahh the number you provided is too **high**, please provide a number from 1 to 100!",
+        content: "Wooaahh the number you provided is too high, please provide a number from 1 to 100!",
         flags: 64,
       });
     } else if (amount < 1) {
       return interaction.reply({
-        content: "Wooaahh the number you provided is too **low**, please provide a number from 1 to 100!",
+        content: "Wooaahh the number you provided is too low, please provide a number from 1 to 100!",
         flags: 64,
       });
     }

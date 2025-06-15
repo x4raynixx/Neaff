@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
 const config = require("./config");
+const q = require("./utils/quick")
 
 const client = new Client({
   intents: [
