@@ -15,9 +15,9 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
 
   async execute(interaction) {
-        if (!config.CLEAR_COMMAND) {
-          return q.cmd_disabled(interaction);
-        }
+    if (!config.CLEAR_COMMAND) {
+      return q.cmd_disabled(interaction);
+    }
 
     await q.check_perms("admin", interaction)
 

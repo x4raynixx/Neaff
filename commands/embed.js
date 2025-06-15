@@ -52,6 +52,10 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
 
   async execute(interaction) {
+    if (q.cstate("EMBED_COMMAND", i) !== "NO") {
+      return q.cmd_disabled()
+    }
+
     if (await q.check_if_server(interaction)) return;
     if ((await q.check_perms("admin", interaction)) === "NO") return;
 

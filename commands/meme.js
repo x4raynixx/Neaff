@@ -11,7 +11,10 @@ module.exports = {
     .setDescription("Chooses a random funny GIF"),
 
   async execute(i) {
-    
+    if (c.tenorApiKey === "") {
+        await q.cmd_disabled(i)
+    }
+
     if (cd.has(i.user.id)) {
       return i.reply({
         content: `Chill, please wait few seconds before using this command again!`,

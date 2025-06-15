@@ -13,7 +13,7 @@ module.exports = {
   // Clear command
   TIME_BEFORE_OWN_MESSAGE_DELETE: 3000, // Time in milliseconds (ms) before the bot deletes his own message with the shown amount of how much messages he deleted.
 
-  //
+  // Blacklisted Words - DO NOT TOUCH UNLESS YOU KNOW WHAT YOU'RE DOING
   aml_bw: q.gbwl(),
 
   // Enable/Disable Commands | True = enabled
@@ -21,6 +21,8 @@ module.exports = {
   CLEAR_COMMAND: true,
   ABOUT_US_COMMAND: true,
   EMBED_COMMAND: true,
+  MEME_COMMAND: true, // Auto Managed from Tenor Api Key!
+
 
   // Messages
   PING_PONG_REPLY: "👋 Pong!",

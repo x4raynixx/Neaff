@@ -32,9 +32,8 @@ async function check_perms(p, interaction) {
   return "OK";
 }
 
-function cstate(name, int) {
-  if (!config[name]) {
-    cmd_disabled(int);
+function cstate(name, i) {
+  if (!config + "." + [name]) {
     return "OK";
   } else {
     return "NO";
