@@ -6,7 +6,10 @@
 
 Creator: **Raynixx**
 
-Team: [Funcieq](https://github.com/funcieqDEV) (Web Developer), [ChickenStrips05](https://github.com/ChickenStrips05) (Bot Developer)
+Dev Team: [ChickenStrips05](https://github.com/ChickenStrips05) (Bot Developer & Admin)
 
-Website: Soon
-Discord: Soon
+You can find our all Team members on our [Website](https://neaff.xyz/creators) or Discord
+
+Website: https://neaff.xyz
+
+Discord: https://discord.gg/A3gDnEf5j6
