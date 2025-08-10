@@ -8,7 +8,7 @@ Creator: **Raynixx**
 
 Dev Team: [ChickenStrips05](https://github.com/ChickenStrips05) (Bot Developer & Admin)
 
-You can find our all Team members on our [Website](https://neaff.xyz/creators) or Discord
+You can find our all Team members on our [Creators Page](https://neaff.xyz/creators) or Discord
 
 Website: https://neaff.xyz
 
